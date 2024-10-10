@@ -28,7 +28,8 @@ public class ConsoleUI implements View {
             System.out.println("7. Вывести команды животного");
             System.out.println("8. Загрузить список животных");
             System.out.println("9. Сохранить список животных");
-            System.out.println("10. Закончить работу");
+            System.out.println("10. Удалить животное из списка");
+            System.out.println("11. Закончить работу");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -59,12 +60,21 @@ public class ConsoleUI implements View {
                     saveFile();
                     break;
                 case "10":
+                    deleteAnimal();
+                    break;
+                case "11":
                     return;
                 default:
                     error();
                     break;
             }
         }
+    }
+
+    private void deleteAnimal() {
+        System.out.println("Введите имя животного:");
+        String name = scanner.nextLine();
+        presenter.deleteAnimal(name);
     }
 
     public void saveFile() {

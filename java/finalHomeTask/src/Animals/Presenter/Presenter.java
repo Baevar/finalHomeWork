@@ -94,5 +94,9 @@ public class Presenter {
         }
     }
 
+    public void deleteAnimal(String name) {
+        view.printAnswer(service.deleteAnimal(name));
+        view.printAnswer(showAnimalList());
+    }
 }
 

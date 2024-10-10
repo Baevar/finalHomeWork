@@ -34,6 +34,17 @@ public class AnimalList implements Iterable<Animals>, Serializable {
         return countnimal;
     }
 
+    public String deleteAnimal(String name){
+        name = name.toLowerCase();
+        for (int i = 0; i < animalList.size(); i++) {
+            if (name.equals(animalList.get(i).getName().toLowerCase())) {
+                 animalList.remove(i);
+                 return "Животное удалено!";
+            }
+        }
+        return "Животное не найдено!";
+    }
+
     public void addCommand(String name, String command) {
         name = name.toLowerCase();
         for (Animals animal : animalList) {
@@ -42,6 +53,7 @@ public class AnimalList implements Iterable<Animals>, Serializable {
             }
         }
     }
+
 
     public String getCommand(String name) {
         name = name.toLowerCase();

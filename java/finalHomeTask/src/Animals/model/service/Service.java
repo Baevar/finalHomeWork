@@ -101,4 +101,7 @@ public class Service {
         }
     }
 
+    public String deleteAnimal(String name) {
+        return animalList.deleteAnimal(name);
+    }
 }
